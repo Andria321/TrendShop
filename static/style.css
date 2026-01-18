@@ -1,0 +1,167 @@
+.product{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.product1:hover{
+    transform: scale(1.03);
+    transition: 0.5s;
+}
+
+footer {
+    margin-top: 40px;
+    background: #222;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    flex-wrap: wrap;
+}
+
+.footer-info {
+    width: 35%;
+}
+
+.product-image-container img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: contain; 
+    background-color: #f8f9fa;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.product-info-box {
+    padding-left: 20px;
+}
+
+@media (max-width: 768px) {
+    .product-info-box {
+        padding-left: 0;
+        margin-top: 20px;
+    }
+}
+
+.price-tag {
+  font-size: 24px;
+  color: #333;
+  font-weight: 700;
+  margin: 20px 0;
+}
+
+.container-background {
+    background-color: #121212;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 20px;
+}
+
+
+.product-container {
+    display: flex;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 50px auto;
+    background: #1e1e1e;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.product-image img {
+    max-width: 400px;
+    border-radius: 10px;
+    background: #2a2a2a;
+    display: block;
+}
+
+.product-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff4d4d;
+    margin-bottom: 20px;
+}
+
+.button-group {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    margin-top: 25px;
+    padding: 15px;
+}
+
+.btn {
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 18px;
+    border-radius: 8px;
+    white-space: nowrap;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    height: 42px;
+    display: inline-flex;
+    justify-content: center;
+    transition: 0.3s ease;
+    height: 42px;
+    box-sizing: border-box;
+    margin: 0 !important;
+    padding: 0 18px;
+    line-height: 1;
+}
+
+.btn-buy {
+    background-color: transparent;
+    border: 2px solid #27ae60;
+    color: #27ae60;
+    flex: 1;
+}
+
+.btn-cart {
+    background-color: transparent;
+    border: 2px solid #27ae60;
+    color: #27ae60;
+    flex: 1;
+}
+
+.btn-delete {
+    background-color: transparent;
+    border: 2px solid #ff0000;
+    color: #ff0000;
+    flex: 1;
+}
+
+.btn-change {
+    background-color: transparent;
+    border: 2px solid #2600ff;
+    color: #2600ff;
+    flex: 1;
+}
+
+.btn:hover {
+    filter: brightness(1.2);
+    transform: translateY(-2px);
+}
+
+body {
+    background: -webkit-linear-gradient(top, #ffffff, #000000, #000000);
+}
+
+.navbar-background{
+    background-color: #d1d1d1;
+}
+
+.base{
+    background-color: black;
+}

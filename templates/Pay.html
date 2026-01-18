@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %} Payment Page {% endblock %}
+
+{% block container %}
+
+<div class="container d-flex justify-content-center align-items-center" style="height:100vh;">
+    <div class="card shadow p-4" style="width: 380px;">
+        <h3 class="text-center mb-3">გადახდა</h3>
+
+        <form action="{{ url_for('pay') }}" method="post">
+            {{ form.hidden_tag() }}
+
+            <div class="mb-3">
+                {{ form.full_name(class="form-control",placeholder="სახელი, გვარი") }}
+            </div>
+
+            <div class="mb-3">
+                {{ form.card_number(class="form-control",placeholder="შიყვანეთ ბარათის ნომერი") }}
+            </div>
+
+            <div class="mb-3">
+                {{ form.exp_date(class="form-control") }}
+            </div>
+
+            <div class="mb-3">
+                {{ form.cvc(class="form-control",placeholder="შიყვანეთ ბარათის 3 ციფრიანი კოდი") }}
+            </div>
+
+            <div>
+                {{ form.location(class="form-control", placeholder="შეიყვანეთ თქვენი ლოკაცია") }}
+            </div>
+            
+            <div class="row mt-2">
+            {{ form.submit(class="btn btn-success")}}
+            </div>
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}

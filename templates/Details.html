@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %} Product Detail {% endblock %}
+
+{% block container %}
+<div class="container mt-5, container-background product-container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="product-image-container, product-image">
+                <img src="/static/images/{{ product['image'] }}" class="img-fluid rounded" alt="{{ product['name'] }}">
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="product-info-box product-details">
+                <p class="display-5">პროდუქტის დასახელება: {{ product['name'] }}</p>
+                <h3 class="text-success price">ფასი: {{ product['price'] }}₾</h5>
+            <div class="button-group">
+                {% if current_user.is_authenticated %}
+                <div class="mt-4 btn">
+                    <a href="/pay" class="btn btn-success btn-lg btn-buy">შეძენა</a>
+                </div>
+                <div>
+                    
+                    <form action="/add_to_cart/{{ product.id }}" method="post">
+                    <input type="hidden" name="item_id" value="{{ product.id }}">
+                     <button type="submit" class="btn btn-success btn-cart btn">კალათაში დამატება</button>
+                        </form>
+                    {% else %}
+                    <p>დარეგისტრირდით, შესაძენად!</p>
+                    {% endif %}
+                </div>
+                <div style="margin: 5px">
+                    {% if current_user.role == "Admin" %}
+                        <a href="/delete/{{ product['id'] }}" class="btn btn-danger btn-delete btn">წაშლა</a>
+                    {% elif current_user.role == "Moderator" %}
+                        <a href="/edit_product/{{ product['id'] }}" class="btn btn-info button43 btn">რედაქტირება</a>
+                    {% endif %}
+                </div>
+            </div>
+                <!-- <hr>
+
+                <h5>Comments:</h5>
+                <div class="comments-section">
+                    {% for comment in comments %}
+                        <p class="border-bottom pb-2">{{ comment }}</p>
+                    {% endfor %} -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %} LogIn Page {% endblock %}
+
+{% block container %}
+
+<div class="container d-flex justify-content-center align-items-center" style="height:100vh;">
+    <div class="card shadow p-4" style="width: 350px;">
+        <h3 class="text-center mb-3">შესვლა</h3>
+
+        <form Href="{{ url_for('login') }}" method="post">
+            {{form.hidden_tag()}}
+            <div class="mb-3">
+                 {{ form.username(class="form-control", placeholder=form.username.label.text ) }}
+            </div>
+            <div class="mb-3">
+                {{ form.mail(class="form-control", placeholder=form.mail.label.text) }}
+            </div>
+
+            <div class="mb-3">
+                {{ form.password(class="form-control", placeholder=form.password.label.text) }}
+            </div>
+
+            <div>
+                {{ form.login(class="btn btn-success") }}
+            </div>
+
+            <p class="text-center mt-3 mb-0">
+                არ გაქვს ანგარიში? <a href="{{ url_for('register') }}">რეგისტრაცია</a>
+            </p>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
